@@ -64,7 +64,7 @@ onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 <script>
   let a, txtValue; //변수 선언
     function myFunction() {
-        let input = document.getElementById("myInput").value; // input
+        let input = document.getElementById("myInput").value(); // input
         console.log("input");
         let li = document.querySelectorAll("li");
         for (let i = 0; i < li.length; i++) { //li 갯수만큼 for 문 반복
