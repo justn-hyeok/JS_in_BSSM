@@ -1,0 +1,32 @@
+body{
+	font-size: 1.2em;
+	text-align: center;
+	color:darkslateblue;
+	background-color:aliceblue;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head> 
+  <body>  
+    <h1>인치 단위 환산</h1>
+    <h2 id = "result"></h2>
+
+  <script>
+    const inch = prompt("inch 단위의 숫자를 입력해주세요.", "예) 30");
+    let cm = inch * 2.54;
+
+    result = document.getElementById("result")
+
+    alert(`${inch}inch는 ${cm}cm 입니다.`);
+    result.textContent = `${inch}inch는 ${cm}cm 입니다.`;
+
+</script>
+</body>
+
+</html>
