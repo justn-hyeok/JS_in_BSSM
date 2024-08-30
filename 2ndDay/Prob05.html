@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript 연습</title>
+<script>
+	function show() {
+        let inputValue = document.getElementById('form1').elements['txt'].value;
+        let msgDiv = document.getElementById('msg');
+        msgDiv.innerHTML = inputValue + "님 안녕하세요! 반갑습니다!";
+    }
+</script>
+</head>
+	
+<body>
+<h1>JavaScript 연습</h1>
+<form id="form1">
+    <input type="text" name="txt">
+    <button type="button" onclick="show()">확인</button>
+    <button type="reset">초기화</button>
+</form>
+
+<!--수정-->
+<div id="msg"></div>
+
+
+</body>
+</html>
