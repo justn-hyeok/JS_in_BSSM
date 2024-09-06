@@ -11,28 +11,24 @@
 
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">문자열 입력</label>
-        <input type="text" class="form-control" id="inputString" placeholder="예: 19990808">
+        <input type="text" class="form-control" id="inputString">
     </div>
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">결과</label>
         <input type="text" class="form-control" id="outputString" readonly>
     </div>
     <button id="extractBtn" type="button" class="btn btn-primary">문자열 추출(substring)</button>
-    <button id="resetBtn" type="button" class="btn btn-primary">대문자변환</button>
-    <button id="resetBtn" type="button" class="btn btn-primary">문자열길이</button>
-    <button id="resetBtn" type="button" class="btn btn-primary">문자열 공백제거</button>
-    <button id="resetBtn" type="button" class="btn btn-primary">문자열 합치기</button>
+    <button id="uppercaseBtn" type="button" class="btn btn-primary">대문자변환</button>
+    <button id="lengthBtn" type="button" class="btn btn-primary">문자열 길이</button>
+    <button id="trimBtn" type="button" class="btn btn-primary">문자열 공백제거</button>
+    <button id="concatBtn" type="button" class="btn btn-primary">문자열 합치기</button>
     <button id="resetBtn" type="button" class="btn btn-primary">Reset</button>
+
 
     <script>
       const inputField = document.getElementById("inputString");
       const outputField = document.getElementById("outputString");
       const extractBtn = document.getElementById("extractBtn");
-      // TODO
-      // 대문자 변환 변수
-      // 문자열 길이 변수
-      // 문자열 공백제거 변수
-      // 문자열 합치기 변수
       const resetBtn = document.getElementById("resetBtn");
 
       extractBtn.addEventListener("click", function() {
@@ -42,6 +38,29 @@
           const day = inputValue.substring(6, 8);
           outputField.value = `${year}년 ${month}월 ${day}일`;
       });
+
+        
+      document.getElementById("uppercaseBtn").addEventListener("click", function() {
+        const inputValue = inputField.value;
+        outputField.value = inputValue.toUpperCase();
+      });
+
+      
+      document.getElementById("lengthBtn").addEventListener("click", function() {
+        const inputValue = inputField.value;
+        outputField.value = `문자열 길이: ${inputValue.length}`;
+      });
+
+      document.getElementById("trimBtn").addEventListener("click", function() {
+        const inputValue = inputField.value.trim();
+        outputField.value = `공백 제거된 문자열: ${inputValue}`;
+      });
+
+      document.getElementById("concatBtn").addEventListener("click", function() {
+        const inputValue = inputField.value;
+        outputField.value = `${inputValue}`;
+      });
+
 
       resetBtn.addEventListener("click", function() {
         inputField.value = "";
